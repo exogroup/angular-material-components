@@ -23,20 +23,20 @@
       "node"
     ],
     "paths": {
-      "@angular-material-components/*": [
-        "dist/@angular-material-components/*"
+      "@exogroup/*": [
+        "dist/@exogroup/*"
       ],
-      "@angular-material-components/color-picker": [
-        "dist/@angular-material-components/color-picker"
+      "@exogroup/color-picker": [
+        "dist/@exogroup/color-picker"
       ],
-      "@angular-material-components/color-picker/*": [
-        "dist/@angular-material-components/color-picker/*"
+      "@exogroup/color-picker/*": [
+        "dist/@exogroup/color-picker/*"
       ],
-      "@angular-material-components/datetime-picker": [
-        "dist/@angular-material-components/datetime-picker"
+      "@exogroup/datetime-picker": [
+        "dist/@exogroup/datetime-picker"
       ],
-      "@angular-material-components/datetime-picker/*": [
-        "dist/@angular-material-components/datetime-picker/*"
+      "@exogroup/datetime-picker/*": [
+        "dist/@exogroup/datetime-picker/*"
       ],
       "file-input": [
         "dist/file-input"

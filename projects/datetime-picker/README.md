@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.com/h2qutc/angular-material-components.svg?branch=master)](https://travis-ci.com/h2qutc/angular-material-components)
 [![License](https://img.shields.io/npm/l/angular-material-components.svg)](https://www.npmjs.com/package/angular-material-components)
-[![npm version](https://badge.fury.io/js/%40angular-material-components%2Fdatetime-picker.svg)](https://www.npmjs.com/package/@angular-material-components/datetime-picker)
-[![Github All Releases](https://img.shields.io/npm/dt/@angular-material-components/datetime-picker.svg)]()
+[![npm version](https://badge.fury.io/js/%40angular-material-components%2Fdatetime-picker.svg)](https://www.npmjs.com/package/@exogroup/datetime-picker)
+[![Github All Releases](https://img.shields.io/npm/dt/@exogroup/datetime-picker.svg)]()
 
 ## Description
 
@@ -21,7 +21,7 @@ A DatetimePicker like @angular/material [Datepicker](https://material.angular.io
 
 Choose the version corresponding to your Angular version:
 
- Angular     | @angular-material-components/datetime-picker
+ Angular     | @exogroup/datetime-picker
  ----------- | -------------------
  16          | 16.x+
  15          | 15.x+ OR 9.x+ for legacy import
@@ -37,14 +37,14 @@ Choose the version corresponding to your Angular version:
 ## Getting started
 
 ```
-npm install --save  @angular-material-components/datetime-picker
+npm install --save  @exogroup/datetime-picker
 ```
 
 ## Setup
 Basically the same way the @angular/material Datepicker is configured and imported.
 
 ```
-import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@exogroup/datetime-picker';
 @NgModule({
    ...
    imports: [
@@ -127,11 +127,11 @@ The easiest way to ensure this is to import one of the provided date modules:
 | **Date type**         	| Date                       	| Moment                                                                              	|
 | **Supported locales** 	| en-US                      	| [See project for details](https://github.com/moment/moment/tree/develop/src/locale) 	|
 | **Dependencies**      	| None                       	| [Moment.js](https://momentjs.com/)                                                  	|
-| **Import from**       	| @angular-material-components/datetime-picker    	| [@angular-material-components/moment-adapter](https://www.npmjs.com/package/@angular-material-components/moment-adapter)      	|
+| **Import from**       	| @exogroup/datetime-picker    	| [@exogroup/moment-adapter](https://www.npmjs.com/package/@exogroup/moment-adapter)      	|
 
 To use NgxMatMomentModule: 
    ```
-   npm install --save  @angular-material-components/moment-adapter
+   npm install --save  @exogroup/moment-adapter
    ```
 
 Please note: NgxMatNativeDateModule is based off the functionality available in JavaScript's native Date object. Thus it is not suitable for many locales. One of the biggest shortcomings of the native Date object is the inability to set the parse format.

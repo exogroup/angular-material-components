@@ -38,7 +38,7 @@ export class DemoDatetimeComponent implements OnInit {
   public stepMinutes = [1, 5, 10, 15, 20, 25];
   public stepSeconds = [1, 5, 10, 15, 20, 25];
 
-  public code1 = 'npm install --save @angular-material-components/datetime-picker';
+  public code1 = 'npm install --save @exogroup/datetime-picker';
 
   public code3 = `<mat-form-field>
   <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
@@ -51,11 +51,11 @@ export class DemoDatetimeComponent implements OnInit {
 </mat-form-field>`;
 
   public code2 = `import {
-           NgxMatDatetimePickerModule, 
-           NgxMatNativeDateModule, 
-           NgxMatTimepickerModule 
-  } from '@angular-material-components/datetime-picker';
-  
+           NgxMatDatetimePickerModule,
+           NgxMatNativeDateModule,
+           NgxMatTimepickerModule
+  } from '@exogroup/datetime-picker';
+
 @NgModule({
   imports: [
     ...
@@ -66,7 +66,7 @@ export class DemoDatetimeComponent implements OnInit {
   ]
 })
 export class AppModule { }`;
-  public code4 = 'npm install --save  @angular-material-components/moment-adapter';
+  public code4 = 'npm install --save  @exogroup/moment-adapter';
   public code5 = `@Injectable()
 export class CustomDateAdapter extends NgxMatDateAdapter<D> {...}
 // D can be Date, Moment or customized type`;
@@ -95,7 +95,7 @@ const CUSTOM_DATE_FORMATS: NgxMatDateFormats = {
   }
 };
 
-//and in the module providers 
+//and in the module providers
 providers: [
     { provide: NGX_MAT_DATE_FORMATS, useValue: CUSTOM_MOMENT_FORMATS }
   ]`;

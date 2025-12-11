@@ -54,10 +54,10 @@ export class DemoFileInputComponent implements OnInit {
   <mat-hint>Hint</mat-hint>
 </mat-form-field>`;
 
-  code1 = `npm install --save @angular-material-components/file-input`;
+  code1 = `npm install --save @exogroup/file-input`;
 
-  code2 = `import { NgxMatFileInputModule } from '@angular-material-components/file-input';
-  
+  code2 = `import { NgxMatFileInputModule } from '@exogroup/file-input';
+
   @NgModule({
      ...
      imports: [
