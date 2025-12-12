@@ -1,6 +1,6 @@
 # Angular Material Extra Components (DatetimePicker, TimePicker, ColorPicker, FileInput ...) for @angular/material 7.x, 8.x, 9.x, 10.x, 11.x, 12.x, 13.x, 14.x, 15.x, 16.x
 
-[![Build Status](https://travis-ci.com/h2qutc/angular-material-components.svg?branch=master)](https://travis-ci.com/h2qutc/angular-material-components)
+[![Build Status](https://travis-ci.com/exogroup/angular-material-components.svg?branch=master)](https://travis-ci.com/exogroup/angular-material-components)
 [![License](https://img.shields.io/npm/l/angular-material-components.svg)](https://www.npmjs.com/package/angular-material-components)
 
 ## Description
@@ -9,7 +9,7 @@ Angular Material Library provide extra components for every project (Datetime pi
 
 Please do not hesitate to contact us if you have any question or suggestion.
 
-Feel free to open the [issues](https://github.com/h2qutc/angular-material-components/issues) or provide a PR.
+Feel free to open the [issues](https://github.com/exogroup/angular-material-components/issues) or provide a PR.
 
 If you like this project, support angular-material-components by starring⭐.
 
