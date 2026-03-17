@@ -6,7 +6,9 @@
 <div class="mat-mdc-form-field-suffix">
   <button matSuffix mat-icon-button [color]="color" class="button-browse" (click)="openFilePicker($event)" type="button"
     [disabled]="disabled">
-    <mat-icon *ngIf="!_customIcon" class="ngx-mat-file-input--default-icon">attach_file</mat-icon>
+    @if (!_customIcon) {
+      <mat-icon class="ngx-mat-file-input--default-icon">attach_file</mat-icon>
+    }
     <ng-content select="[ngxMatFileInputIcon]"></ng-content>
   </button>
 </div>

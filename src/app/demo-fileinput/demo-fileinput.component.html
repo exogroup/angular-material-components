@@ -80,7 +80,7 @@
 
     <h2>Theming</h2>
     <p>&#64;see &#64;angular/material <a href="https://material.angular.io/guide/theming#using-a-pre-built-theme">Using a
-        pre-built theme</a></p>
+    pre-built theme</a></p>
     <p>Add the Material Design icon font to your index.html</p>
     <pre><code ngxMatHighlight class="language-css">{{code6}}</code></pre>
   </mat-tab>
@@ -101,7 +101,9 @@
         <div class="title">Selected file(s):</div>
         <div class="value">
           <ul>
-            <li *ngFor="let item of files">{{item?.name}}</li>
+            @for (item of files; track item) {
+              <li>{{item?.name}}</li>
+            }
           </ul>
         </div>
       </mat-card-content>
@@ -120,16 +122,20 @@
           <span class="label">disabled (Default: false) </span>
           <mat-radio-group aria-label="Select an option" [ngModel]="disabled"
             (ngModelChange)="onDisabledChanged($event)">
-            <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option.value">
+            @for (option of options; track option) {
+              <mat-radio-button class="example-radio-button" [value]="option.value">
               {{option.label}}</mat-radio-button>
+            }
           </mat-radio-group>
         </div>
 
         <div class="config-wrapper">
           <span class="label">multiple (Default: false) </span>
           <mat-radio-group aria-label="Select an option" [(ngModel)]="multiple">
-            <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="option.value">
+            @for (option of options; track option) {
+              <mat-radio-button class="example-radio-button" [value]="option.value">
               {{option.label}}</mat-radio-button>
+            }
           </mat-radio-group>
         </div>
 
@@ -138,9 +144,11 @@
           <mat-form-field>
             <mat-label>Select accept</mat-label>
             <mat-select [(ngModel)]="accept">
-              <mat-option *ngFor="let item of listAccepts" [value]="item">
-                {{item}}
-              </mat-option>
+              @for (item of listAccepts; track item) {
+                <mat-option [value]="item">
+                  {{item}}
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
         </div>
@@ -150,9 +158,11 @@
           <mat-form-field>
             <mat-label>Select color</mat-label>
             <mat-select [(ngModel)]="color">
-              <mat-option *ngFor="let item of listColors" [value]="item">
-                {{item}}
-              </mat-option>
+              @for (item of listColors; track item) {
+                <mat-option [value]="item">
+                  {{item}}
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
         </div>

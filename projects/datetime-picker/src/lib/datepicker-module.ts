@@ -5,7 +5,6 @@ import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCommonModule } from '@angular/material/core';
 import { NgxMatCalendar, NgxMatCalendarHeader } from './calendar';
 import { NgxMatCalendarBody } from './calendar-body';
 import { NgxMatDateRangeInput } from './date-range-input';
@@ -33,7 +32,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OverlayModule,
     A11yModule,
     PortalModule,
-    MatCommonModule,
     NgxMatTimepickerModule,
     FormsModule,
     ReactiveFormsModule
