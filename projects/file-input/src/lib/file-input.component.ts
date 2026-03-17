@@ -2,27 +2,12 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Platform } from '@angular/cdk/platform';
 import { ChangeDetectorRef, Component, ContentChild, Directive, DoCheck, ElementRef, forwardRef, Input, OnDestroy, Optional, Self, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, FormGroupDirective, NgControl, NgForm } from '@angular/forms';
-import { CanUpdateErrorState, ErrorStateMatcher, mixinErrorState, ThemePalette } from '@angular/material/core';
+import { ErrorStateMatcher, ThemePalette } from '@angular/material/core';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { Subject } from 'rxjs';
 import { FileOrArrayFile } from './file-input-type';
 
 let nextUniqueId = 0;
-
-const _NgxMatInputMixinBase = mixinErrorState(
-  class {
-
-    readonly stateChanges = new Subject<void>();
-
-    constructor(
-      public _defaultErrorStateMatcher: ErrorStateMatcher,
-      public _parentForm: NgForm,
-      public _parentFormGroup: FormGroupDirective,
-      /** @docs-private */
-      public ngControl: NgControl,
-    ) { }
-  },
-);
 
 @Directive({
     selector: '[ngxMatFileInputIcon]',
@@ -44,8 +29,8 @@ export class NgxMatFileInputIcon { }
     exportAs: 'ngx-mat-file-input',
     standalone: false
 })
-export class NgxMatFileInputComponent extends _NgxMatInputMixinBase implements MatFormFieldControl<FileOrArrayFile>,
-  OnDestroy, DoCheck, CanUpdateErrorState, ControlValueAccessor {
+export class NgxMatFileInputComponent implements MatFormFieldControl<FileOrArrayFile>,
+  OnDestroy, DoCheck, ControlValueAccessor {
 
   @ViewChild('inputFile', { static: true }) private _inputFileRef: ElementRef;
   @ViewChild('inputValue', { static: true }) private _inputValueRef: ElementRef;
@@ -134,6 +119,10 @@ export class NgxMatFileInputComponent extends _NgxMatInputMixinBase implements M
   }
   private _accept: string;
 
+  private _defaultErrorStateMatcher: ErrorStateMatcher;
+  private _parentForm: NgForm | null;
+  private _parentFormGroup: FormGroupDirective | null;
+
   constructor(protected _elementRef: ElementRef<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
     protected _platform: Platform,
     private _cd: ChangeDetectorRef,
@@ -141,7 +130,9 @@ export class NgxMatFileInputComponent extends _NgxMatInputMixinBase implements M
     @Optional() _parentForm: NgForm,
     @Optional() _parentFormGroup: FormGroupDirective,
     _defaultErrorStateMatcher: ErrorStateMatcher) {
-    super(_defaultErrorStateMatcher, _parentForm, _parentFormGroup, ngControl);
+    this._defaultErrorStateMatcher = _defaultErrorStateMatcher;
+    this._parentForm = _parentForm || null;
+    this._parentFormGroup = _parentFormGroup || null;
 
     this.id = this.id;
 
@@ -163,6 +154,20 @@ export class NgxMatFileInputComponent extends _NgxMatInputMixinBase implements M
   ngDoCheck() {
     if (this.ngControl) {
       this.updateErrorState();
+    }
+  }
+
+  /** Recomputes the error state based on the parent form and control. */
+  updateErrorState() {
+    const oldState = this.errorState;
+    const parent = this._parentFormGroup || this._parentForm;
+    const matcher = this.errorStateMatcher || this._defaultErrorStateMatcher;
+    const control = this.ngControl ? this.ngControl.control : null;
+    const newState = !!(matcher && matcher.isErrorState(control, parent));
+
+    if (newState !== oldState) {
+      this.errorState = newState;
+      this.stateChanges.next();
     }
   }
 
