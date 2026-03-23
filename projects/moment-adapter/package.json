@@ -13,8 +13,8 @@
   },
   "homepage": "https://github.com/exogroup/angular-material-components",
   "peerDependencies": {
-    "@angular/common": "^21.2.4",
-    "@angular/core": "^21.2.4",
-    "moment": "^2.24.0"
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "moment": "^2.0.0"
   }
 }
