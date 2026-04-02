@@ -10,24 +10,24 @@ import { FileOrArrayFile } from './file-input-type';
 let nextUniqueId = 0;
 
 @Directive({
-    selector: '[ngxMatFileInputIcon]',
-    standalone: false
+  selector: '[ngxMatFileInputIcon]',
+  standalone: false,
 })
 export class NgxMatFileInputIcon { }
 
 @Component({
-    selector: 'ngx-mat-file-input',
-    templateUrl: 'file-input.component.html',
-    styleUrls: ['file-input.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    host: {
-        'class': 'ngx-mat-file-input'
-    },
-    providers: [
-        { provide: MatFormFieldControl, useExisting: forwardRef(() => NgxMatFileInputComponent) }
-    ],
-    exportAs: 'ngx-mat-file-input',
-    standalone: false
+  selector: 'ngx-mat-file-input',
+  templateUrl: 'file-input.component.html',
+  styleUrls: ['file-input.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    class: 'ngx-mat-file-input',
+  },
+  providers: [
+    { provide: MatFormFieldControl, useExisting: forwardRef(() => NgxMatFileInputComponent) },
+  ],
+  exportAs: 'ngx-mat-file-input',
+  standalone: false,
 })
 export class NgxMatFileInputComponent implements MatFormFieldControl<FileOrArrayFile>,
   OnDestroy, DoCheck, ControlValueAccessor {

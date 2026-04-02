@@ -2,8 +2,8 @@ import { Directive, HostListener } from '@angular/core';
 import { NUMERIC_REGEX } from '../helpers';
 
 @Directive({
-    selector: '[ngxMatNumericColorInput]',
-    standalone: false
+  selector: '[ngxMatNumericColorInput]',
+  standalone: false,
 })
 export class NumericColorInputDirective {
 

@@ -4,10 +4,10 @@ import { ThemePalette } from '@angular/material/core';
 import { Color } from 'projects/color-picker/src/public-api';
 
 @Component({
-    selector: 'ngx-mat-demo-colorpicker',
-    templateUrl: './demo-colorpicker.component.html',
-    styleUrls: ['./demo-colorpicker.component.scss'],
-    standalone: false
+  selector: 'ngx-mat-demo-colorpicker',
+  templateUrl: './demo-colorpicker.component.html',
+  styleUrls: ['./demo-colorpicker.component.scss'],
+  standalone: false,
 })
 export class DemoColorpickerComponent implements OnInit {
 
@@ -42,13 +42,13 @@ colorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.
   from '@exogroup/color-picker'
 
   @NgModule({
-    ...
+  ...
     imports: [
-         ...
-         NgxMatColorPickerModule
+      ...
+      NgxMatColorPickerModule
     ],
     providers: [
-     { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }
+      { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }
     ],
     ...
  })
@@ -62,12 +62,12 @@ colorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.
 }
 
 @NgModule({
-    ...
-    providers: [
-      { provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS }
-    ],
-    ...
-  })
+  ...
+  providers: [
+    { provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS }
+  ],
+  ...
+})
 export class AppModule { }`;
 
   public code5 = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">';

@@ -102,23 +102,23 @@ export const NGX_MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER = {
  * @docs-private
  */
 @Component({
-    selector: 'ngx-mat-datepicker-content',
-    templateUrl: 'datepicker-content.html',
-    styleUrls: ['datepicker-content.scss'],
-    host: {
-        'class': 'mat-datepicker-content',
-        '[@transformPanel]': '_animationState',
-        '(@transformPanel.start)': '_handleAnimationEvent($event)',
-        '(@transformPanel.done)': '_handleAnimationEvent($event)',
-        '[class.mat-datepicker-content-touch]': 'datepicker.touchUi',
-        '[class.mat-datepicker-content-touch-with-time]': '!datepicker.hideTime',
-    },
-    animations: [ngxMatDatepickerAnimations.transformPanel, ngxMatDatepickerAnimations.fadeInCalendar],
-    exportAs: 'ngxMatDatepickerContent',
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    inputs: ['color'],
-    standalone: false
+  selector: 'ngx-mat-datepicker-content',
+  templateUrl: 'datepicker-content.html',
+  styleUrls: ['datepicker-content.scss'],
+  host: {
+    class: 'mat-datepicker-content',
+    '[@transformPanel]': '_animationState',
+    '(@transformPanel.start)': '_handleAnimationEvent($event)',
+    '(@transformPanel.done)': '_handleAnimationEvent($event)',
+    '[class.mat-datepicker-content-touch]': 'datepicker.touchUi',
+    '[class.mat-datepicker-content-touch-with-time]': '!datepicker.hideTime',
+  },
+  animations: [ngxMatDatepickerAnimations.transformPanel, ngxMatDatepickerAnimations.fadeInCalendar],
+  exportAs: 'ngxMatDatepickerContent',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: ['color'],
+  standalone: false,
 })
 export class NgxMatDatepickerContent<S, D = NgxExtractDateTypeFromSelection<S>>
   implements OnInit, AfterViewInit, OnDestroy {

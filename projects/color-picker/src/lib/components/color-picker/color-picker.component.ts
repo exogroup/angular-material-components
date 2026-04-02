@@ -31,17 +31,17 @@ export const NGX_MAT_COLOR_PICKER_SCROLL_STRATEGY_FACTORY_PROVIDER = {
 };
 
 @Component({
-    selector: 'ngx-mat-color-picker-content',
-    templateUrl: './color-picker-content.component.html',
-    styleUrls: ['color-picker-content.component.scss'],
-    host: {
-        'class': 'ngx-mat-colorpicker-content',
-        '[class.ngx-mat-colorpicker-content-touch]': 'picker.touchUi',
-    },
-    exportAs: 'ngxMatColorPickerContent',
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'ngx-mat-color-picker-content',
+  templateUrl: './color-picker-content.component.html',
+  styleUrls: ['color-picker-content.component.scss'],
+  host: {
+    class: 'ngx-mat-colorpicker-content',
+    '[class.ngx-mat-colorpicker-content-touch]': 'picker.touchUi',
+  },
+  exportAs: 'ngxMatColorPickerContent',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NgxMatColorPickerContentComponent {
 
@@ -56,12 +56,12 @@ export class NgxMatColorPickerContentComponent {
 }
 
 @Component({
-    selector: 'ngx-mat-color-picker',
-    template: '',
-    exportAs: 'ngxMatColorPicker',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None,
-    standalone: false
+  selector: 'ngx-mat-color-picker',
+  template: '',
+  exportAs: 'ngxMatColorPicker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class NgxMatColorPickerComponent implements OnInit, OnDestroy {
 

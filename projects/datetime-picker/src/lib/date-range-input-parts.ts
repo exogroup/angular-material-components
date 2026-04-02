@@ -205,29 +205,29 @@ abstract class NgxMatDateRangeInputPartBase<D>
 
 /** Input for entering the start date in a `mat-date-range-input`. */
 @Directive({
-    selector: 'input[ngxMatStartDate]',
-    host: {
-        'class': 'mat-start-date mat-date-range-input-inner',
-        '[disabled]': 'disabled',
-        '(input)': '_onInput($event.target.value)',
-        '(change)': '_onChange()',
-        '(keydown)': '_onKeydown($event)',
-        '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
-        '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
-        '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
-        '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
-        '(blur)': '_onBlur()',
-        'type': 'text',
-    },
-    providers: [
-        { provide: NG_VALUE_ACCESSOR, useExisting: NgxMatStartDate, multi: true },
-        { provide: NG_VALIDATORS, useExisting: NgxMatStartDate, multi: true },
-    ],
-    // These need to be specified explicitly, because some tooling doesn't
-    // seem to pick them up from the base class. See #20932.
-    outputs: ['dateChange', 'dateInput'],
-    inputs: ['errorStateMatcher'],
-    standalone: false
+  selector: 'input[ngxMatStartDate]',
+  host: {
+    class: 'mat-start-date mat-date-range-input-inner',
+    '[disabled]': 'disabled',
+    '(input)': '_onInput($event.target.value)',
+    '(change)': '_onChange()',
+    '(keydown)': '_onKeydown($event)',
+    '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
+    '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
+    '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
+    '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
+    '(blur)': '_onBlur()',
+    type: 'text',
+  },
+  providers: [
+    { provide: NG_VALUE_ACCESSOR, useExisting: NgxMatStartDate, multi: true },
+    { provide: NG_VALIDATORS, useExisting: NgxMatStartDate, multi: true },
+  ],
+  // These need to be specified explicitly, because some tooling doesn't
+  // seem to pick them up from the base class. See #20932.
+  outputs: ['dateChange', 'dateInput'],
+  inputs: ['errorStateMatcher'],
+  standalone: false,
 })
 export class NgxMatStartDate<D> extends NgxMatDateRangeInputPartBase<D> {
   /** Validator that checks that the start date isn't after the end date. */
@@ -319,29 +319,29 @@ export class NgxMatStartDate<D> extends NgxMatDateRangeInputPartBase<D> {
 
 /** Input for entering the end date in a `mat-date-range-input`. */
 @Directive({
-    selector: 'input[ngxMatEndDate]',
-    host: {
-        'class': 'mat-end-date mat-date-range-input-inner',
-        '[disabled]': 'disabled',
-        '(input)': '_onInput($event.target.value)',
-        '(change)': '_onChange()',
-        '(keydown)': '_onKeydown($event)',
-        '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
-        '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
-        '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
-        '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
-        '(blur)': '_onBlur()',
-        'type': 'text',
-    },
-    providers: [
-        { provide: NG_VALUE_ACCESSOR, useExisting: NgxMatEndDate, multi: true },
-        { provide: NG_VALIDATORS, useExisting: NgxMatEndDate, multi: true },
-    ],
-    // These need to be specified explicitly, because some tooling doesn't
-    // seem to pick them up from the base class. See #20932.
-    outputs: ['dateChange', 'dateInput'],
-    inputs: ['errorStateMatcher'],
-    standalone: false
+  selector: 'input[ngxMatEndDate]',
+  host: {
+    class: 'mat-end-date mat-date-range-input-inner',
+    '[disabled]': 'disabled',
+    '(input)': '_onInput($event.target.value)',
+    '(change)': '_onChange()',
+    '(keydown)': '_onKeydown($event)',
+    '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
+    '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
+    '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
+    '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
+    '(blur)': '_onBlur()',
+    type: 'text',
+  },
+  providers: [
+    { provide: NG_VALUE_ACCESSOR, useExisting: NgxMatEndDate, multi: true },
+    { provide: NG_VALIDATORS, useExisting: NgxMatEndDate, multi: true },
+  ],
+  // These need to be specified explicitly, because some tooling doesn't
+  // seem to pick them up from the base class. See #20932.
+  outputs: ['dateChange', 'dateInput'],
+  inputs: ['errorStateMatcher'],
+  standalone: false,
 })
 export class NgxMatEndDate<D> extends NgxMatDateRangeInputPartBase<D> {
   /** Validator that checks that the end date isn't before the start date. */
