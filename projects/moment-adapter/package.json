@@ -1,6 +1,6 @@
 {
   "name": "@exogroup/moment-adapter",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Angular Material Moment Adapter",
   "author": "HO Hong Quan",
   "license": "MIT",
@@ -13,8 +13,8 @@
   },
   "homepage": "https://github.com/exogroup/angular-material-components",
   "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "moment": "^2.18.1"
+    "@angular/common": "^21.2.4",
+    "@angular/core": "^21.2.4",
+    "moment": "^2.24.0"
   }
 }

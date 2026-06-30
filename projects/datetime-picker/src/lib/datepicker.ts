@@ -16,5 +16,6 @@ import { NgxMatDatepickerBase, NgxMatDatepickerControl } from './datepicker-base
     NGX_MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER,
     { provide: NgxMatDatepickerBase, useExisting: NgxMatDatetimepicker },
   ],
+  standalone: false,
 })
 export class NgxMatDatetimepicker<D> extends NgxMatDatepickerBase<NgxMatDatepickerControl<D>, D | null, D> { }

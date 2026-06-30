@@ -51,6 +51,7 @@ import { NGX_MAT_DATE_FORMATS, NgxMatDateFormats } from './core/date-formats';
   exportAs: 'ngxMatYearView',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NgxMatYearView<D> implements AfterContentInit, OnDestroy {
   private _rerenderSubscription = Subscription.EMPTY;

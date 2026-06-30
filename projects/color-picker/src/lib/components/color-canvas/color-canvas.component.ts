@@ -14,8 +14,9 @@ const RADIUS_NOB = 5;
   styleUrls: ['./color-canvas.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    'class': 'ngx-mat-color-canvas'
-  }
+    class: 'ngx-mat-color-canvas',
+  },
+  standalone: false,
 })
 export class NgxMatColorCanvasComponent extends NgxMatBaseColorCanvas
   implements OnInit, AfterViewInit, OnChanges, OnDestroy {

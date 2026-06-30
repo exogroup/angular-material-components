@@ -8,8 +8,9 @@ import { ThemePalette } from '@angular/material/core';
   styleUrls: ['color-palette.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    'class': 'ngx-mat-color-palette'
-  }
+    class: 'ngx-mat-color-palette',
+  },
+  standalone: false,
 })
 export class NgxMatColorPaletteComponent implements OnInit {
 

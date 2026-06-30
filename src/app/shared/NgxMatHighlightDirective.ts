@@ -1,14 +1,16 @@
 import { Directive, ElementRef, AfterViewInit } from '@angular/core';
-// import * as hljs from 'highlight.js';
-var hljs = require('highlight.js/lib/common');
+import highlightjs from 'highlight.js/lib/common';
 
 @Directive({
-    selector: 'code[ngxMatHighlight]'
+  selector: 'code[ngxMatHighlight]',
+  standalone: false,
 })
 export class NgxMatHighlightDirective implements AfterViewInit {
-    constructor(private eltRef: ElementRef) {
-    }
-    ngAfterViewInit() {
-        (hljs as any).highlightBlock(this.eltRef.nativeElement);
-    }
+  constructor(private eltRef: ElementRef) {
+  }
+
+  ngAfterViewInit() {
+    const hljs: any = (highlightjs as any).default || highlightjs;
+    hljs.highlightElement(this.eltRef.nativeElement);
+  }
 }

@@ -17,7 +17,8 @@ import {NgxMatDatepickerBase, NgxMatDatepickerControl} from './datepicker-base';
 /** Button that will close the datepicker and assign the current selection to the data model. */
 @Directive({
   selector: '[ngxMatDatepickerApply], [ngxMatDateRangePickerApply]',
-  host: {'(click)': '_applySelection()'},
+  host: { '(click)': '_applySelection()' },
+  standalone: false,
 })
 export class NgxMatDatepickerApply {
   constructor(private _datepicker: NgxMatDatepickerBase<NgxMatDatepickerControl<any>, unknown>) {}
@@ -31,7 +32,8 @@ export class NgxMatDatepickerApply {
 /** Button that will close the datepicker and discard the current selection. */
 @Directive({
   selector: '[ngxMatDatepickerCancel], [ngxMatDateRangePickerCancel]',
-  host: {'(click)': '_datepicker.close()'},
+  host: { '(click)': '_datepicker.close()' },
+  standalone: false,
 })
 export class NgxMatDatepickerCancel {
   constructor(public _datepicker: NgxMatDatepickerBase<NgxMatDatepickerControl<any>, unknown>) {}
@@ -53,6 +55,7 @@ export class NgxMatDatepickerCancel {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class NgxMatDatepickerActions implements AfterViewInit, OnDestroy {
   @ViewChild(TemplateRef) _template: TemplateRef<unknown>;

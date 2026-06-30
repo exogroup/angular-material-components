@@ -9,7 +9,8 @@ const presetFile = new File([], "file 1");
 @Component({
   selector: 'app-demo-fileinput',
   templateUrl: './demo-fileinput.component.html',
-  styleUrls: ['./demo-fileinput.component.scss']
+  styleUrls: ['./demo-fileinput.component.scss'],
+  standalone: false,
 })
 export class DemoFileInputComponent implements OnInit {
 

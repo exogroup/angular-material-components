@@ -8,8 +8,9 @@ import { BASIC_COLORS, stringInputToObject } from '../../helpers';
   styleUrls: ['./color-collection.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    'class': 'ngx-mat-color-collection'
-  }
+    class: 'ngx-mat-color-collection',
+  },
+  standalone: false,
 })
 export class NgxMatColorCollectionComponent implements OnInit {
 

@@ -14,17 +14,18 @@ import {
   templateUrl: './timepicker.component.html',
   styleUrls: ['./timepicker.component.scss'],
   host: {
-    'class': 'ngx-mat-timepicker'
+    class: 'ngx-mat-timepicker',
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => NgxMatTimepickerComponent),
-      multi: true
-    }
+      multi: true,
+    },
   ],
   exportAs: 'ngxMatTimepicker',
   encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class NgxMatTimepickerComponent<D> implements ControlValueAccessor, OnInit, OnChanges {
 

@@ -8,6 +8,7 @@ import { NgxMatColorPickerComponent } from '../color-picker/color-picker.compone
 
 @Directive({
   selector: '[ngxMatColorpickerToggleIcon]',
+  standalone: false,
 })
 export class NgxMatColorpickerToggleIcon { }
 
@@ -16,7 +17,7 @@ export class NgxMatColorpickerToggleIcon { }
   templateUrl: './color-toggle.component.html',
   styleUrls: ['./color-toggle.component.scss'],
   host: {
-    'class': 'ngx-mat-color-toggle',
+    class: 'ngx-mat-color-toggle',
     // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
     // consumer may have provided, while still being able to receive focus.
     '[attr.tabindex]': '-1',
@@ -26,7 +27,8 @@ export class NgxMatColorpickerToggleIcon { }
     '(focus)': '_button.focus()',
   },
   exportAs: 'ngxMatColorPickerToggle',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class NgxMatColorToggleComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
 

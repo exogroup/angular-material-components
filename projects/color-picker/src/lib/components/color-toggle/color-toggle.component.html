@@ -2,9 +2,11 @@
   [attr.tabindex]="disabled ? -1 : tabIndex" [disabled]="disabled" (click)="open($event)"
   [disableRipple]="disableRipple">
 
-  <mat-icon *ngIf="!_customIcon" [style.color]="picker?._selected?.rgba">
-    palette
-  </mat-icon>
+  @if (!_customIcon) {
+    <mat-icon [style.color]="picker?._selected?.rgba">
+      palette
+    </mat-icon>
+  }
 
   <ng-content select="[ngxMatColorpickerToggleIcon]"></ng-content>
 

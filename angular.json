@@ -15,12 +15,15 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-material-components",
+            "outputPath": {
+              "base": "dist/angular-material-components"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -30,15 +33,14 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true,
             "allowedCommonJsDependencies": [
               "highlight.js"
-            ]
+            ],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -53,8 +55,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-material-components:build"
+            "buildTarget": "angular-material-components:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-material-components:build:production"
+              "buildTarget": "angular-material-components:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-material-components:build"
+            "buildTarget": "angular-material-components:build"
           }
         },
         "test": {
@@ -213,26 +213,39 @@
       }
     }
   },
-  "defaultProject": "angular-material-components",
   "schematics": {
     "@schematics/angular:module": {
-      "prefix": "ngx-mat"
+      "prefix": "ngx-mat",
+      "typeSeparator": "."
     },
     "@schematics/angular:component": {
       "prefix": "ngx-mat",
       "style": "scss",
-      "skipTests": true
+      "skipTests": true,
+      "type": "component"
     },
     "@schematics/angular:directive": {
       "prefix": "ngx-mat",
-      "skipTests": true
+      "skipTests": true,
+      "type": "directive"
     },
     "@schematics/angular:pipe": {
       "prefix": "ngx-mat",
-      "skipTests": true
+      "skipTests": true,
+      "typeSeparator": "."
     },
     "@schematics/angular:service": {
-      "skipTests": true
+      "skipTests": true,
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
     }
   },
   "cli": {

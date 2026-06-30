@@ -41,11 +41,11 @@ let nextUniqueId = 0;
   styleUrls: ['date-range-input.scss'],
   exportAs: 'ngxMatDateRangeInput',
   host: {
-    'class': 'mat-date-range-input',
+    class: 'mat-date-range-input',
     '[class.mat-date-range-input-hide-placeholders]': '_shouldHidePlaceholders()',
     '[class.mat-date-range-input-required]': 'required',
     '[attr.id]': 'id',
-    'role': 'group',
+    role: 'group',
     '[attr.aria-labelledby]': '_getAriaLabelledby()',
     '[attr.aria-describedby]': '_ariaDescribedBy',
     // Used by the test harness to tie this input to its calendar. We can't depend on
@@ -58,6 +58,7 @@ let nextUniqueId = 0;
     { provide: MatFormFieldControl, useExisting: NgxMatDateRangeInput },
     { provide: NGX_MAT_DATE_RANGE_INPUT_PARENT, useExisting: NgxMatDateRangeInput },
   ],
+  standalone: false,
 })
 export class NgxMatDateRangeInput<D>
   implements

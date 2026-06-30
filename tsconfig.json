@@ -4,20 +4,15 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "esModuleInterop": true,
     "declaration": false,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "lib": [
-      "es5",
-      "es2015",
-      "dom"
     ],
     "types": [
       "node"

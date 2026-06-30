@@ -35,7 +35,7 @@ export const NGX_MAT_DATEPICKER_VALIDATORS: any = {
     { provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: NgxMatDatepickerInput },
   ],
   host: {
-    'class': 'mat-datepicker-input',
+    class: 'mat-datepicker-input',
     '[attr.aria-haspopup]': '_datepicker ? "dialog" : null',
     '[attr.aria-owns]': '(_datepicker?.opened && _datepicker.id) || null',
     '[attr.min]': 'min ? _dateAdapter.toIso8601(min) : null',
@@ -50,6 +50,7 @@ export const NGX_MAT_DATEPICKER_VALIDATORS: any = {
     '(keydown)': '_onKeydown($event)',
   },
   exportAs: 'ngxMatDatepickerInput',
+  standalone: false,
 })
 export class NgxMatDatepickerInput<D>
   extends NgxMatDatepickerInputBase<D | null, D>
